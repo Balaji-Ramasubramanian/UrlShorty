@@ -29,6 +29,7 @@ module UrlShorty
    data = JSON.parse(response.body)
    data["id"]
    puts data["id"]
+   return data["id"]
   end
 
   def self.expand(surl)
@@ -38,6 +39,7 @@ module UrlShorty
     parsed = JSON.parse(response.body)
     lurl = parsed['longUrl']
     puts lurl
+    return lurl 
  end
 
 end
