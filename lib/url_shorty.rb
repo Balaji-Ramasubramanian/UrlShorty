@@ -1,5 +1,6 @@
 require "url_shorty/version"
 require "url_shorty/utils"
+require "url_shorty/analytics"
 require 'net/http'
 require 'uri'
 require 'json'

@@ -1,6 +1,5 @@
+require 'ulr_shorty/utils'
 module UrlShorty
-
-  class Analytics
 
        def self.analysis (short_url)
 		    url             = BASE_URL + @api_key + SHORT + short_url + PROJECTION
@@ -23,5 +22,4 @@ module UrlShorty
 		    return parsed.created
 	  end
 
-  end
 end
