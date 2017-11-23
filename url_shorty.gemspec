@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "url_shorty/version" 
+require "url_shorty/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "url_shorty"
@@ -14,7 +14,9 @@ Gem::Specification.new do |spec|
                         and also able to expand the Short URLs.}
   spec.homepage      = "https://github.com/balaji12345/UrlShorty"
   spec.license       = "MIT"
-
+  spec.files = ['lib/url_shorty/analytics.rb',
+                'lib/url_shorty/utils.rb',
+                'lib/url_shorty/version.rb']
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)

@@ -1,4 +1,5 @@
 require "bundler/setup"
+$LOAD_PATH.unshift File.expand_path("../../lib",__FILE__)
 require "url_shorty"
 
 RSpec.configure do |config|
