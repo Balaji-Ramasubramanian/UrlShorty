@@ -5,7 +5,7 @@ You can refer the gem Documentation [here](http://www.rubydoc.info/gems/url_shor
 
   Using this you can,
 - Shorten a Long URL
-- Expand Shortened URL
+- Expand a Shortened URL
 - Get Analytics details of a Shortened URL. 
 
 ## Installation
@@ -61,7 +61,7 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 ```ruby
 	UrlShorty.get_analytics("<shorten URL>")
 ```
-##### Basics Info:
+#### Basics Info:
 
 - kind
 - id
@@ -71,18 +71,24 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 
 **Example:**
 ```ruby
-    url_analytics = UrlShorty.get_analytics("https://goo.gl/XojnVs")
-	url_analytics.kind  	#=> "urlshortener#url"
-	url_analytics.id 		#=> "https://goo.gl/XojnVs"
-	url_analytics.longUrl 	#=> "https://github.com/Balaji-Ramasubramanian/UrlShorty"
-	url_analytics.created 	#=> "2017-11-26T07:26:32.556+00:00"
+	url_analytics_data = UrlShorty.get_analytics("https://goo.gl/XojnVs")
+	url_analytics_data.kind  	
+	#=> "urlshortener#url"
+	url_analytics_data.id 		
+	#=> "https://goo.gl/XojnVs"
+	url_analytics_data.longUrl 	
+	#=> "https://github.com/Balaji-Ramasubramanian/UrlShorty"
+	url_analytics_data.created 	
+	#=> "2017-11-26T07:26:32.556+00:00"
+
 ```
-##### Usage Info:
+#### Usage Info:
 Available Scopes:
 - allTime
 - month
 - week
 - twoHours
+
 
 Available information:
 - shortUrlClicks
@@ -95,14 +101,14 @@ Available information:
 
 **Example**
 ```ruby
-	url_analytics = UrlShorty.get_analytics("https://goo.gl/SeRtHU")
-	url_analytics.analytics.allTime.shortUrlClicks 			
+	url_analytics_data = UrlShorty.get_analytics("https://goo.gl/SeRtHU")
+	url_analytics_data.analytics.allTime.shortUrlClicks 			
 	#=> "88"
-	url_analytics.analytics.allTime.referers[0].count 		
+	url_analytics_data.analytics.allTime.referers[0].count 		
 	#=>"73"
-	url_analytics.analytics.month.browsers[1].id 			
+	url_analytics_data.analytics.month.browsers[1].id 			
 	#=>"Chrome"
-	url_analytics.analytics.twoHours.platforms[2].id 		
+	url_analytics_data.analytics.twoHours.platforms[2].id 		
 	#=>"Macintosh"
 ```
 
