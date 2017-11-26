@@ -15,7 +15,7 @@ module UrlShorty
  # @param api_key [String] Google URL Shortener API KEY 
  # @return [nil]
  #
- #    UrlShorty.api_key("<API KEY>")
+ #     UrlShorty.api_key("<API KEY>")
  #
   def self.api_key (api_key)
   	@api_key         = api_key
