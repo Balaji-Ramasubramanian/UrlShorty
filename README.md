@@ -71,11 +71,11 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 
 **Example:**
 ```ruby
-    variable = UrlShorty.get_analytics("https://goo.gl/XojnVs")
-	variable.kind  		#=> "urlshortener#url"
-	variable.id 		#=> "https://goo.gl/XojnVs"
-	variable.longUrl 	#=> "https://github.com/Balaji-Ramasubramanian/UrlShorty"
-	variable.created 	#=> "2017-11-26T07:26:32.556+00:00"
+    url_analytics = UrlShorty.get_analytics("https://goo.gl/XojnVs")
+	url_analytics.kind  	#=> "urlshortener#url"
+	url_analytics.id 		#=> "https://goo.gl/XojnVs"
+	url_analytics.longUrl 	#=> "https://github.com/Balaji-Ramasubramanian/UrlShorty"
+	url_analytics.created 	#=> "2017-11-26T07:26:32.556+00:00"
 ```
 ##### Usage Info:
 Available Scopes:
@@ -95,14 +95,14 @@ Available information:
 
 **Example**
 ```ruby
-	variable = UrlShorty.get_analytics("https://goo.gl/SeRtHU")
-	variable.analytics.allTime.shortUrlClicks 			
+	url_analytics = UrlShorty.get_analytics("https://goo.gl/SeRtHU")
+	url_analytics.analytics.allTime.shortUrlClicks 			
 	#=> "88"
-	variable.analytics.allTime.referers[0].count 		
+	url_analytics.analytics.allTime.referers[0].count 		
 	#=>"73"
-	variable.analytics.month.browsers[1].id 			
+	url_analytics.analytics.month.browsers[1].id 			
 	#=>"Chrome"
-	variable.analytics.twoHours.platforms[2].id 		
+	url_analytics.analytics.twoHours.platforms[2].id 		
 	#=>"Macintosh"
 ```
 
