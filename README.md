@@ -26,8 +26,7 @@ Or install it yourself as:
 
 ## Usage
 ## Get Google URL Shortener API Key:
-
-	Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/getting_started) Getting Started page to create a API key for google url Shortener service. 
+Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/getting_started) Getting Started page to create a API key for google url Shortener service. 
 
 ## Setting up API key:
 
@@ -36,13 +35,14 @@ Or install it yourself as:
 ```
 ## Shorten URL:
 
-```UrlShorty.shorten_url("<Long URL>")```
+```UrlShorty.shorten_url("<Long URL>")
+```
 
 **Example:**
 
 ```ruby
 	UrlShorty.shorten_url("https://github.com/balaji12345/UrlShorty")
-		#=>"https://goo.gl/SeRtHU" 
+	#=>"https://goo.gl/SeRtHU" 
 ```
 
 ## Expand URL:
@@ -62,11 +62,11 @@ Or install it yourself as:
 	UrlShorty.get_analytics("<shorten URL>")
 ```
 ##### Basics Info:
-		-kind
-		-id
-		-longUrl
-		-status
-		-created
+ 		- kind
+		- id
+		- longUrl
+		- status
+		- created
 **Example:**
 ```ruby
     variable = UrlShorty.get_analytics("https://goo.gl/SeRtHU")
@@ -77,31 +77,31 @@ Or install it yourself as:
 ```
 ##### Usage Info:
 	   Available Scopes:
-	    -allTime
-	    -month
-	    -week
-	    -twoHours
+	    - allTime
+	    - month
+	    - week
+	    - twoHours
 
 	   Available informations:
-	    -shortUrlClicks
-	    -longUrlClicks
-	    -referers
-	    -countries
-	    -browsers
-	    -platforms
+	    - shortUrlClicks
+	    - longUrlClicks
+	    - referers
+	    - countries
+	    - browsers
+	    - platforms
 
 
 **Example**
 ```ruby
 	variable = UrlShorty.get_analytics("https://goo.gl/SeRtHU")
 	variable.analytics.allTime.shortUrlClicks 			
-		#=> "88"
+	#=> "88"
 	variable.analytics.allTime.referers[0].count 		
-		#=>"73"
+	#=>"73"
 	variable.analytics.month.browsers[1].id 			
-		#=>"Chrome"
+	#=>"Chrome"
 	variable.analytics.twoHours.platforms[2].id 		
-		#=>"Macintosh"
+	#=>"Macintosh"
 ```
 
 
