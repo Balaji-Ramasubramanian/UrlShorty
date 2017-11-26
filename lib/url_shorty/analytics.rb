@@ -1,5 +1,7 @@
 require_relative 'utils'
 module UrlShorty
+# @param shorten_url [String] A String represents Shortened URL
+# @return parsed_json_obj [Object] A Object that contains the analytics data of the Shortened URL
 # To get analytics data for Shortened url
 # The basic information about the Shortened URL are,
 #
@@ -48,8 +50,6 @@ module UrlShorty
 #  		url_analytics_data.analytics.twoHours.platforms[2].id 		
 #  		=>"Macintosh"
 #
-# @param shorten_url [String] A String represents Shortened URL
-# @return parsed_json_obj [Object] A Object that contains the analytics data of the Shortened URL
 def self.get_analytics (shorten_url)
     url             = BASE_URL + @api_key + SHORT_URL + shorten_url + PROJECTION
     response        = ""
