@@ -15,7 +15,7 @@ module UrlShorty
  # @param api_key [String] Google URL Shortener API KEY 
  # @return [nil]
  #
- # UrlShorty.api_key("<API KEY>")
+ #    UrlShorty.api_key("<API KEY>")
  #
   def self.api_key (api_key)
   	@api_key         = api_key
@@ -26,8 +26,8 @@ module UrlShorty
 # @param long_url [String] A url value that has to be shortened
 # @return [String] A string representing the shortened URL
 #
-# UrlShorty.shorten_url(""https://github.com/Balaji-Ramasubramanian/UrlShorty")
-# => "https://goo.gl/XojnVs"
+#     UrlShorty.shorten_url(""https://github.com/Balaji-Ramasubramanian/UrlShorty")
+#     => "https://goo.gl/XojnVs"
 #
   def self.shorten_url(long_url)
    uri              = URI.parse( BASE_URL + @api_key )
@@ -40,17 +40,23 @@ module UrlShorty
    request.body     = parameter.to_json
    response         = http.request(request)
    data             = JSON.parse(response.body) 
-   return data["id"]
+   if data["id"] != nil then
+    return data["id"]
+   else
+    puts data
+    return data["error"]["errors"][0]["reason"]
+   end
   end
 
 # This method will expand the shortened URL into a long URL
 # @param shorten_url [String] A url value that has to be expanded
 # @return [String] A string representing the expanded URL
 #
-# UrlShorty.expand_url("https://goo.gl/XojnVs")
-# => "https://github.com/Balaji-Ramasubramanian/UrlShorty"
+#     UrlShorty.expand_url("https://goo.gl/XojnVs")
+#     => "https://github.com/Balaji-Ramasubramanian/UrlShorty"
+#
   def self.expand_url(shorten_url)
-  	url             = BASE_URL + @api_key + SHORT + shorten_url
+  	url             = BASE_URL + @api_key + SHORT_URL + shorten_url
     response        = ""
     response        = HTTParty.get(url)
     parsed          = JSON.parse(response.body)
