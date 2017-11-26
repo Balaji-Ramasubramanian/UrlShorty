@@ -14,7 +14,7 @@ module UrlShorty
 
 
 # To shorten the url 
-  def self.shorten(long_url)
+  def self.shorten_url(long_url)
    uri              = URI.parse( BASE_URL + @api_key )
    header           = {'Content-Type': 'application/json'}	
    parameter        = {"longUrl": "#{long_url}"}  
@@ -29,7 +29,7 @@ module UrlShorty
   end
 
 # To expand the shorten url
-  def self.expand(short_url)
+  def self.expand_url(short_url)
   	url             = BASE_URL + @api_key + SHORT + short_url
     response        = ""
     response        = HTTParty.get(url)
