@@ -31,18 +31,18 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 ## Setting up API key:
 
 ```ruby
- UrlShorty.api_key("<Your API KEY>")
+	UrlShorty.api_key("<Your API KEY>")
 ```
 ## Shorten URL:
-
-```UrlShorty.shorten_url("<Long URL>")
+```ruby
+	UrlShorty.shorten_url("<Long URL>")
 ```
 
 **Example:**
 
 ```ruby
-	UrlShorty.shorten_url("https://github.com/balaji12345/UrlShorty")
-	#=>"https://goo.gl/SeRtHU" 
+	UrlShorty.shorten_url("https://github.com/Balaji-Ramasubramanian/UrlShorty")
+	#=>"https://goo.gl/XojnVs" 
 ```
 
 ## Expand URL:
@@ -52,8 +52,8 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 
 **Example:**
 ```ruby
-	UrlShorty.expand_url("https://goo.gl/SeRtHU")
-	#=> "https://github.com/balaji12345/UrlShorty"
+	UrlShorty.expand_url("https://goo.gl/XojnVs")
+	#=> "https://github.com/Balaji-Ramasubramanian/UrlShorty"
  ```
 
 ## Get Analytics:
@@ -62,33 +62,35 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 	UrlShorty.get_analytics("<shorten URL>")
 ```
 ##### Basics Info:
- 		- kind
-		- id
-		- longUrl
-		- status
-		- created
+
+- kind
+- id
+- longUrl
+- status
+- created
+
 **Example:**
 ```ruby
-    variable = UrlShorty.get_analytics("https://goo.gl/SeRtHU")
+    variable = UrlShorty.get_analytics("https://goo.gl/XojnVs")
 	variable.kind  		#=> "urlshortener#url"
-	variable.id 		#=> "https://goo.gl/SeRtHU"
-	variable.longUrl 	#=> "https://github.com/balaji12345/UrlShorty"
+	variable.id 		#=> "https://goo.gl/XojnVs"
+	variable.longUrl 	#=> "https://github.com/Balaji-Ramasubramanian/UrlShorty"
 	variable.created 	#=> "2017-11-26T07:26:32.556+00:00"
 ```
 ##### Usage Info:
-	   Available Scopes:
-	    - allTime
-	    - month
-	    - week
-	    - twoHours
+Available Scopes:
+- allTime
+- month
+- week
+- twoHours
 
-	   Available informations:
-	    - shortUrlClicks
-	    - longUrlClicks
-	    - referers
-	    - countries
-	    - browsers
-	    - platforms
+Available information:
+- shortUrlClicks
+- longUrlClicks
+- referers
+- countries
+- browsers
+- platforms
 
 
 **Example**
