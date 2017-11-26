@@ -11,24 +11,24 @@ require 'Openssl'
 module UrlShorty
 # This method will set-up the Google URL shortener API key for your project. 
 # If you don't have any API key, { Click here }[https://developers.google.com/url-shortener/v1/getting_started] to create one for your project.
-# @param api_key [String] Google URL Shortener API KEY 
-# @return [nil]
 # Example:
 #
 #     UrlShorty.api_key("<API KEY>")
 #
+# @param api_key [String] Google URL Shortener API KEY 
+# @return [nil]
 def self.api_key (api_key)
   	@api_key         = api_key
 end
 
 # This method will shorten the provided long URL into a short URL using the Google URL shortener service. 
-# @param long_url [String] A url value that has to be shortened
-# @return [String] A string representing the shortened URL
 # Example:
 #
 #     UrlShorty.shorten_url(""https://github.com/Balaji-Ramasubramanian/UrlShorty")
 #     => "https://goo.gl/XojnVs"
 #
+# @param long_url [String] A url value that has to be shortened
+# @return [String] A string representing the shortened URL
 def self.shorten_url(long_url)
    uri              = URI.parse( BASE_URL + @api_key )
    header           = {'Content-Type': 'application/json'}	
@@ -49,13 +49,13 @@ def self.shorten_url(long_url)
 end
 
 # This method will expand the shortened URL into a long URL
-# @param shorten_url [String] A url value that has to be expanded
-# @return [String] A string representing the expanded URL
 # Example:
 #
 #     UrlShorty.expand_url("https://goo.gl/XojnVs")
 #     => "https://github.com/Balaji-Ramasubramanian/UrlShorty"
 #
+# @param shorten_url [String] A url value that has to be expanded
+# @return [String] A string representing the expanded URL
 def self.expand_url(shorten_url)
   	url             = BASE_URL + @api_key + SHORT_URL + shorten_url
     response        = ""
