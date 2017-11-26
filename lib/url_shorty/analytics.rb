@@ -30,6 +30,14 @@ module UrlShorty
 #  		- week
 #  		- twoHours
 #
+# The Available information
+#       - shortUrlClicks
+#      - longUrlClicks
+#      - referers
+#      - countries
+#      - browsers
+#      - platforms
+#
 # Examples: 
 #
 #  		url_analytics_data = UrlShorty.get_analytics("https://goo.gl/SeRtHU")
