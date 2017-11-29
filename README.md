@@ -1,7 +1,7 @@
 # UrlShorty
 
 UrlShorty is ruby gem to simplify URL shortening using Google URL shortener. 
-You can refer the gem Documentation [here](http://www.rubydoc.info/gems/url_shorty/0.0.6)
+You can refer the gem Documentation [here](http://www.rubydoc.info/gems/url_shorty/0.0.13)
 
   Using this you can,
 - Shorten a Long URL
