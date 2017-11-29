@@ -31,11 +31,11 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 ## Setting up API key:
 
 ```ruby
-	UrlShorty.api_key("<Your API KEY>")
+	UrlShorty.api_key("<Your_API_KEY>")
 ```
 ## Shorten URL:
 ```ruby
-	UrlShorty.shorten_url("<Long URL>")
+	UrlShorty.shorten_url("<Long_URL>")
 ```
 
 **Example:**
@@ -47,7 +47,7 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 
 ## Expand URL:
 ```ruby
-	UrlShorty.expand_url("<Shorten URL>")
+	UrlShorty.expand_url("<Shorten_URL>")
  ```
 
 **Example:**
@@ -59,7 +59,7 @@ Refer [Google URL Shortener](https://developers.google.com/url-shortener/v1/gett
 ## Get Analytics:
    To get summary of the analytics for the shortened URL,
 ```ruby
-	UrlShorty.get_analytics("<shorten URL>")
+	UrlShorty.get_analytics("<Shorten_URL>")
 ```
 #### Basics Info:
 
