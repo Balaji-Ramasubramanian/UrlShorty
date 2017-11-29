@@ -1,5 +1,5 @@
 module UrlShorty
-		BASE_URL = "https://www.googleapis.com/urlshortener/v1/url?key="
-		SHORT_URL = "&shortUrl="
-		PROJECTION = "&projection=FULL"
+  BASE_URL = "https://www.googleapis.com/urlshortener/v1/url?key="
+  SHORT_URL = "&shortUrl="
+  PROJECTION = "&projection=FULL"
 end
