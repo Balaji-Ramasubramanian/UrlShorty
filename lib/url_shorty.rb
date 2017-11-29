@@ -61,7 +61,6 @@ module UrlShorty
     response        = HTTParty.get(url)
     parsed          = JSON.parse(response.body)
     long_url        = parsed['longUrl']
-    puts long_url
     return long_url 
   end
     
