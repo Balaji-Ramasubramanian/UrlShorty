@@ -32,7 +32,7 @@ module UrlShorty
     uri              =  BASE_URL + @api_key 
     headers           = {'Content-Type' => 'application/json'}	
     body             = {"longUrl" => "#{long_url}"}.to_json 
-    response         = HTTParty.post(uri , body: body , headers: headers  )
+    response         = HTTParty.post(uri , body: body , headers: headers )
     data             = JSON.parse(response.body) 
     if data["id"] != nil then
       return data["id"]
