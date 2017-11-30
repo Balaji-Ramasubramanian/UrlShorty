@@ -30,7 +30,7 @@ module UrlShorty
   #
   def self.shorten_url(long_url)
     uri              =  BASE_URL + @api_key 
-    headers           = {'Content-Type' => 'application/json'}	
+    headers          = {'Content-Type' => 'application/json'}	
     body             = {"longUrl" => "#{long_url}"}.to_json 
     response         = HTTParty.post(uri , body: body , headers: headers )
     data             = JSON.parse(response.body) 
