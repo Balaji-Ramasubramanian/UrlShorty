@@ -29,15 +29,10 @@ module UrlShorty
   #      => "https://goo.gl/XojnVs"
   #
   def self.shorten_url(long_url)
-    uri              = URI.parse( BASE_URL + @api_key )
-    header           = {'Content-Type': 'application/json'}	
-    parameter        = {"longUrl": "#{long_url}"}  
-    http             = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl     = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-    request          = Net::HTTP::Post.new(uri.request_uri, header)
-    request.body     = parameter.to_json
-    response         = http.request(request)
+    uri              =  BASE_URL + @api_key 
+    headers           = {'Content-Type' => 'application/json'}	
+    body             = {"longUrl" => "#{long_url}"}.to_json 
+    response         = HTTParty.post(uri , body: body , headers: headers  )
     data             = JSON.parse(response.body) 
     if data["id"] != nil then
       return data["id"]
@@ -60,7 +55,7 @@ module UrlShorty
     response        = ""
     response        = HTTParty.get(url)
     parsed          = JSON.parse(response.body)
-    long_url        = parsed['longUrl']
+    long_url        = parsed longUrl
     return long_url 
   end
     
