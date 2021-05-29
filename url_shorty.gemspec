@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{This is a google url shortener tool for ruby users.}
   spec.description   = %q{By using this gem we can able to shorten a URL
                         and also able to expand the Short URLs.}
-  spec.homepage      = "https://github.com/balaji12345/UrlShorty"
+  spec.homepage      = "https://github.com/Balaji-Ramasubramanian/UrlShorty"
   spec.license       = "MIT"
   spec.files = ['lib/url_shorty/analytics.rb',
                 'lib/url_shorty/utils.rb',
